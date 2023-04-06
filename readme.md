@@ -27,6 +27,25 @@ Example Linux command:
 curl -X POST -H "Content-Type: application/json" -d '{"repository": {"name": "test"}}' http://localhost:8000/deploy
 ```
 
+Example Github Action:
+```yaml
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to server
+        run: |
+          curl -X POST https://yourserver.com/deploy/ \
+          -H 'Content-Type: application/json' \
+          -d '{"repository": {"name": "test"}}'
+```
 ## How to add a new project
 
 1. Create a new repo in config.json
