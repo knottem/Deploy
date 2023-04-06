@@ -26,7 +26,21 @@ with the following content for windows:
   ```
 3. Run `npm install`
 4. Run `npm start`
-5. Send a post request to `localhost:8000/deploy` with a json body containing the project name
+5. Send a post request to `localhost:8000/deploy` with a json body containing the repo name
+
+  Here's an example of my config.json
+  ```json
+  [
+    {
+        "repo": "fakestore-cart",
+        "sh": "cd /www/fakestore-cart && git pull"
+    },
+    {
+        "repo": "test2",
+        "sh": "cd /app/test2 && git pull && pm2 restart test2"
+    }
+  ]
+  ```
 
 ## How to test locally
 
