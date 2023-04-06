@@ -1,6 +1,6 @@
 [
     {
-        "repo": "example",
-        "sh": "cd && cd /www/example && git pull"
+        "repo": "test",
+        "sh": "dir"
     }
 ]
