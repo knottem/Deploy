@@ -1,0 +1,14 @@
+{
+  "name": "deploy.js",
+  "version": "1.0.0",
+  "description": "Runs sh commands on the host",
+  "main": "deploy.js",
+  "scripts": {
+    "start": "node deploy.js"
+  },
+  "author": "Erik Wallenius",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
