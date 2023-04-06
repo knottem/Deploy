@@ -5,17 +5,36 @@ This is a script to deploy my projects to my server. It's a simple node api that
 ## How to use
 
 1. Clone the repo
-2. Run `npm install`
-3. Run `npm start`
-4. Send a post request to `localhost:8000/deploy` with a json body containing the project name
+2. Create a config.json file in the root of the repo
+with the following content for windows:
+  ```json
+  [
+    {
+        "repo": "test",
+        "sh": "dir"
+    }
+  ]
+  ```
+  and the following content for linux:
+  ```json
+  [
+    {
+        "repo": "test",
+        "sh": "ls"
+    }
+  ]
+  ```
+3. Run `npm install`
+4. Run `npm start`
+5. Send a post request to `localhost:8000/deploy` with a json body containing the project name
 
 ## How to test locally
 
 1. Clone the repo
-2. Run `npm install` in the folder of the repo
-3. Run `npm start`
-4. Send a post request to `localhost:8000/deploy` with a json body containing the project name
-5. change config.json to "repo" to "test" and "sh" to "dir" for windows or "ls" for linux
+2. create a config.json file in the root of the repo. The content should be the same as in the example above
+3. Run `npm install` in the folder of the repo
+4. Run `npm start`
+5. Send a post request to `localhost:8000/deploy` with a json body containing the project name
 
 Example PowerShell command: 
 ```powershell
