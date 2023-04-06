@@ -29,8 +29,8 @@ app.post('/deploy', (req, res) => {
                 return res.status(500).json({ error: stderr });
             }
             console.log(stdout.trim());
-            return res.status(200).json({ message: 'Deployed successfully: ' + repoName});
         });
+        return res.status(200).json({ message: 'Deploying: ' + repoName});
     } else {
         console.log(`Repository ${repoName} not found in config.json`);
         return res.status(404).json({ error: 'Repository not found' });
