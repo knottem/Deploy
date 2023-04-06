@@ -19,12 +19,12 @@ This is a script to deploy my projects to my server. It's a simple node api that
 
 Example PowerShell command: 
 ```powershell
-Invoke-WebRequest -Uri "http://localhost:8000/deploy" -Method Post -Body '{"project":"test"}'
+Invoke-RestMethod -Uri http://localhost:8000/deploy -Method Post -ContentType 'application/json' -Body '{"repository": {"name": "test"}}'
 ```
 
 Example Linux command:
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"project":"test"}' http://localhost:8000/deploy
+curl -X POST -H "Content-Type: application/json" -d '{"repository": {"name": "test"}}' http://localhost:8000/deploy
 ```
 
 ## How to add a new project
